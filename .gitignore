@@ -1,0 +1,6 @@
+nifi_conf/
+providers.xml
+docker-compose.yml
+nifi_registry_conf/
+nifi_registry_database/
+nifi_registry_flow_storage/
