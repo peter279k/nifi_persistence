@@ -39,7 +39,6 @@ services:
       timeout: "3s"
       start_period: "5s"
       retries: 5
-    privileged: false
     volumes:
       - nifi_database_repository:/opt/nifi/nifi-current/database_repository
       - nifi_flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
