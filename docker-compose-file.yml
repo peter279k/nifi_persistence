@@ -22,7 +22,7 @@ services:
       #- ./nifi_registry_conf:/opt/nifi-registry/nifi-registry-current/conf
 # data extraction, transformation and load service
   nifi:
-    image: 'apache/nifi:1.28.0'  # latest image as of 2021-11-09.
+    build: ./nifi_service
     restart: on-failure
     ports:
       - '8091:8080'
