@@ -25,3 +25,9 @@
 - https://www.youtube.com/watch?v=j0zrNz3ONZI
 - https://medium.com/devops-central/integrating-git-with-nifi-registries-a-step-by-step-guide-f9f74c2ba046
 - https://medium.com/geekculture/host-a-fully-persisted-apache-nifi-service-with-docker-ffaa6a5f54a3
+
+## Troubleshooting
+
+- `Apache NIFI 2+ HTTP ERROR 400 Invalid SNI` message will present when migrating to the `2.0`.
+
+1. https://stackoverflow.com/questions/78985347/apache-nifi-2-http-error-400-invalid-sni
