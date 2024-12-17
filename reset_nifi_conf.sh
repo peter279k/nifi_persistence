@@ -1,6 +1,6 @@
 #!/bin/bash
 
-read -p "Do you want to reset NiFi configurations? " ans
+read -p "Do you want to reset NiFi configurations?[Y/n] " ans
 
 if [[ $ans == "Y" || $ans == "y" ]]; then
     docker compose down
