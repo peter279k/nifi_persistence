@@ -1,3 +1,6 @@
+keystore.p12
+nifi-cert.crt
+truststore.p12
 nifi_conf/
 providers.xml
 docker-compose.yml
