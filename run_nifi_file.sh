@@ -30,7 +30,7 @@ if [[ $check_keytook == '' ]]; then
 fi;
 
 
-keystore_pass=$(cat ./nifi_conf/nifi.properties | grep 'nifi.security.keystorePasswd=' | awk '{split($1,a,"="); print a[2]}')
+keystore_pass=$(cat ./nifi_conf/nifi.properties | grep 'nifi.security.keystorePasswd' | awk '{split($1,a,"="); print a[2]}')
 truststore_pass=$(cat ./nifi_conf/nifi.properties | grep 'nifi.security.truststorePasswd' | awk '{split($1,a,"="); print a[2]}')
 
 echo "Generating the PKCS12 keypair"
