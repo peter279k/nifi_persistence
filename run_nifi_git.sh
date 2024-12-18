@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo -e "\e[31mThis script is for Git version control has not been ready yet!\e[0m"
+exit 1;
+
 # https://medium.com/geekculture/host-a-fully-persisted-apache-nifi-service-with-docker-ffaa6a5f54a3
 
 echo "Starting tricky NiFi persistence..."
