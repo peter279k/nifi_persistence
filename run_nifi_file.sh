@@ -34,7 +34,15 @@ keystore_pass=$(cat ./nifi_conf/nifi.properties | grep 'nifi.security.keystorePa
 truststore_pass=$(cat ./nifi_conf/nifi.properties | grep 'nifi.security.truststorePasswd' | awk '{split($1,a,"="); print a[2]}')
 
 echo "Generating the PKCS12 keypair"
-keytool  -storepass $keystore_pass -genkeypair -alias nifi-cert -keyalg RSA -keysize 2048 -validity 365 -keystore keystore.p12 -storetype PKCS12 -dname "CN=nifi, OU=III, O=III, L=Taipei, S=Sonshan, C=TW" -ext "SAN=ip:0.0.0.0,ip:140.92.141.210,ip:127.0.0.1"
+
+if [[ ! -f "SAN.txt" ]]; then
+    echo "SAN.txt file is not found."
+    exit 1;
+fi;
+
+san_setting=$(cat "SAN.txt")
+
+keytool  -storepass $keystore_pass -genkeypair -alias nifi-cert -keyalg RSA -keysize 2048 -validity 365 -keystore keystore.p12 -storetype PKCS12 -dname "CN=nifi, OU=III, O=III, L=Taipei, S=Sonshan, C=TW" -ext "SAN=$san_setting"
 
 echo "Export the cert"
 keytool -storepass $keystore_pass -exportcert -alias nifi-cert -file nifi-cert.crt -keystore keystore.p12 -storetype PKCS12
