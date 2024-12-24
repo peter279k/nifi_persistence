@@ -28,9 +28,9 @@ services:
     ports:
       - 27017:27017/tcp
     environment:
-      - MONGO_INITDB_ROOT_USERNAME: ${DB_ADMIN_USERNAME:-admin}
-      - MONGO_INITDB_ROOT_PASSWORD: ${DB_ADMIN_PASSWORD:-mongodb}
-      - MONGO_INITDB_DATABASE: ${DB_TABLE_NAME:-mongodb}
+      - MONGO_INITDB_ROOT_USERNAME=${DB_ADMIN_USERNAME:-admin}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_ADMIN_PASSWORD:-mongodb}
+      - MONGO_INITDB_DATABASE=${DB_TABLE_NAME:-mongodb}
     volumes:
       - mongo_data:/data/db
 
