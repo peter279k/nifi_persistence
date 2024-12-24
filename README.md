@@ -23,7 +23,7 @@
 4. Creating the `SAN.txt` file and it can refer the `SAN.txt.example` file.
 5. Run the `run_nifi_git.sh` to create the NiFi and NiFi registry services firstly.
 
-- If we want to use the file persistemce storage with the MongoDB, we can use following steps:
+- If we want to use the file persistence storage with the MongoDB, we can use following steps:
 
 1. Cloning this repository via the `git clone https://github.com/peter279k/nifi_persistence`.
 2. Copy the `providers.xml.file` file to the `providers.xml` file.
