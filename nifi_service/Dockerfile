@@ -1,6 +1,6 @@
-FROM apache/nifi:2.0.0
+FROM apache/nifi:2.1.0
 
 USER root
-RUN apt-get update && apt-get -y install python3 python3-pip && pip3 install pandas
+RUN apt-get update && apt-get -y install python3 python3-pip && pip3 install pandas --break-system-packages
 
 USER nifi

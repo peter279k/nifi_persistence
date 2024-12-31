@@ -7,7 +7,7 @@ services:
       - ALLOW_ANONYMOUS_LOGIN=yes
   # version control for nifi flows
   registry:
-    image: 'apache/nifi-registry:2.0.0'
+    image: 'apache/nifi-registry:2.1.0'
     restart: on-failure
     ports:
       - "18080:18080"
