@@ -91,7 +91,7 @@ services:
     build: ./nifi_service
     restart: on-failure
     ports:
-      - '8091:8443'
+      - '8093:8443'
     environment:
       - NIFI_WEB_HTTPS_PORT=8443
       - NIFI_WEB_HTTPS_HOST=${NIFI_WEB_HTTPS_HOST:-nifi-3}
