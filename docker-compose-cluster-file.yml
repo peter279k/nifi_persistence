@@ -40,7 +40,7 @@ services:
       - SINGLE_USER_CREDENTIALS_USERNAME=${SINGLE_USER_CREDENTIALS_USERNAME:-admin}
       - SINGLE_USER_CREDENTIALS_PASSWORD=${SINGLE_USER_CREDENTIALS_PASSWORD:-ZLvgNGRBDl7MEMR7}
     healthcheck:
-      test: "${DOCKER_HEALTHCHECK_TEST:-curl -k https://127.0.0.1:8091/nifi/ || exit 1}"
+      test: ["CMD", "curl", "-k", "https://nifi-1:8443/nifi-api/access/config"]
       interval: "60s"
       timeout: "3s"
       start_period: "5s"
@@ -73,7 +73,7 @@ services:
       - SINGLE_USER_CREDENTIALS_USERNAME=${SINGLE_USER_CREDENTIALS_USERNAME:-admin}
       - SINGLE_USER_CREDENTIALS_PASSWORD=${SINGLE_USER_CREDENTIALS_PASSWORD:-ZLvgNGRBDl7MEMR7}
     healthcheck:
-      test: "${DOCKER_HEALTHCHECK_TEST:-curl -k https://127.0.0.1:8092/nifi/ || exit 1}"
+      test: ["CMD", "curl", "-k", "https://nifi-2:8443/nifi-api/access/config"]
       interval: "60s"
       timeout: "3s"
       start_period: "5s"
@@ -106,7 +106,7 @@ services:
       - SINGLE_USER_CREDENTIALS_USERNAME=${SINGLE_USER_CREDENTIALS_USERNAME:-admin}
       - SINGLE_USER_CREDENTIALS_PASSWORD=${SINGLE_USER_CREDENTIALS_PASSWORD:-ZLvgNGRBDl7MEMR7}
     healthcheck:
-      test: "${DOCKER_HEALTHCHECK_TEST:-curl -k https://127.0.0.1:8091/nifi/ || exit 1}"
+      test: ["CMD", "curl", "-k", "https://nifi-3:8443/nifi-api/access/config"]
       interval: "60s"
       timeout: "3s"
       start_period: "5s"

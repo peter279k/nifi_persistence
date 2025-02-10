@@ -6,13 +6,13 @@ echo "Starting tricky NiFi persistence..."
 
 docker compose up -d --build
 
-echo "Sleep 100 seconds to wait for all containers are started..."
-sleep 100
+echo "Sleep 200 seconds to wait for all containers are started..."
+sleep 200
 
 for number in 1 2 3
 do
     echo "Copy /opt/nifi/nifi-current/conf to host ./nifi${number}_conf/ directory"
-    docker compose cp nifi$number:/opt/nifi/nifi-current/conf "./nifi${number}_conf"
+    docker compose cp nifi-$number:/opt/nifi/nifi-current/conf "./nifi${number}_conf"
 done;
 
 
