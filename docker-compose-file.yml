@@ -1,7 +1,7 @@
 services:
   # configuration manager for NiFi
   zookeeper:
-    image: 'bitnami/zookeeper:latest'
+    image: 'bitnamilegacy/zookeeper:latest'
     restart: on-failure
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
